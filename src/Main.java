@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.io.FileInputStream;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.SortedSet;
@@ -44,6 +46,35 @@ public class Main {
 
     }
 
+
     private static void Hobby(Hobby hobby) {
     }
+
+    FileInputStream inputStream = null;
+
+    Address getAddress() {
+        try {
+            String choice = " ";
+            while (!(choice.equalsIgnoreCase ("x"))) {
+                JOptionPane JOptionPane = null;
+                String name = JOptionPane.showInputDialog
+                        ("Enter a Name: ");
+                String street = JOptionPane.showInputDialog
+                        ("Enter Street Address: ");
+                String city = JOptionPane.showInputDialog
+                        ("Enter City: ");
+                String country = JOptionPane.showInputDialog
+                        ("Enter Country: ");
+                Address create = new Address (street, city, country);
+                String message = create + "Press Enter to continue or 'x' to exit:";
+                choice = JOptionPane.showInputDialog (null, message, "Cristi", JOptionPane.PLAIN_MESSAGE);
+            }
+        } catch (NullPointerException e) {
+
+        }
+
+
+        return null;
+    }
 }
+
